@@ -1,0 +1,32 @@
+# General Metadata
+
+
+[build]
+frontend_dist = "client"
+before_dev_command = "pnpm dev"
+before_build_command = "pnpm build"
+
+#schema = "gen/schemas/desktop-schema.json"
+#identifier = "com.tauri"
+#product_name = "thelounge-rust"
+#version = "0.1.0"
+
+[app]
+with_global_tauri = true
+
+[[app.windows]]
+title = "thelounge"
+width = 800
+height = 600
+resizable = true
+fullscreen = false
+label = "main"
+url = "index.html"
+devtools = true
+
+[bundle]
+active = true
+resources = ["scripts/*", "client/*", "icons/*", "server/*", "shared/*"]
+
+[plugins]
+reload = true
